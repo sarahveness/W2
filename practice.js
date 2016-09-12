@@ -1,20 +1,13 @@
-var http = require("http");
+const request = require("request");
+const endpoint = "https://www.example.com";
 
-var printExampleHTML = {
-  host: "example.com",
-  path: "/"
-};
-
-http.get(printExampleHTML, (response) => {
-
-  response.setEncoding("utf8");
-
-  response.on("data", function(data) {
-    console.log(data);
-  });
-
-  response.on("end", function() {
-    console.log("If you see this, you did it right. ");
-  });
-
+request.get( {
+  url: endpoint,
+  json: true
+}, function (err, incomingMessage, responseBody) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(responseBody);
 })
