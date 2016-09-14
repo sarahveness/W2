@@ -11,6 +11,7 @@ var owner = inputs[0];
 var repo = inputs[1];
 var apiRoot = "https://api.github.com";
 
+// message from Kenny
 
 function getRepoContributors(repoOwner, repoName, cb) {
   result = [];
